@@ -1,15 +1,15 @@
 import React from 'react';
 
-class Header extends React.Component {
+class Blurb extends React.Component {
 
 
   render() {
     return (
       <div>
-        Hello, I a header.
+        Hello, I a blurb.
       </div>
     )
   }
 }
 
-export default Header;
+export default Blurb;
