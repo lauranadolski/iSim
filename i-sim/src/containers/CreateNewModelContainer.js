@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../components/Header';
+import ThreeDModel from '../components/ThreeDModel';
 
 class CreateNewModelContainer extends React.Component {
 
@@ -7,6 +9,8 @@ class CreateNewModelContainer extends React.Component {
     return (
       <div>
         Hello, I am a create new model container.
+        <Header />
+        <ThreeDModel />
       </div>
     )
   }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../components/Header';
+import LoginAndAccountCreationButtonBox from '../components/LoginAndAccountCreationButtonBox';
 
 class LandingPageContainer extends React.Component {
 
@@ -7,6 +9,8 @@ class LandingPageContainer extends React.Component {
     return (
       <div>
         Hello, I am a landing page container.
+        <Header />
+        <LoginAndAccountCreationButtonBox />
       </div>
     )
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 
 class LoggedInHomepageContainer extends React.Component {
 
@@ -7,6 +8,7 @@ class LoggedInHomepageContainer extends React.Component {
     return (
       <div>
         Hello, I am a logged in homepage container.
+        <Header />
       </div>
     )
   }

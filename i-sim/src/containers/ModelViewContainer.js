@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 
 class ModelViewContainer extends React.Component {
 
@@ -7,6 +8,7 @@ class ModelViewContainer extends React.Component {
     return (
       <div>
         Hello, I am a model view container.
+        <Header />
       </div>
     )
   }
