@@ -8,6 +8,7 @@ import AboutPageContainer from '../containers/AboutPageContainer';
 import CreateNewModelContainer from '../containers/CreateNewModelContainer';
 import ModelViewContainer from '../containers/ModelViewContainer';
 import ModelEditContainer from '../containers/ModelEditContainer';
+import LoggedInHomepageContainer from '../containers/LoggedInHomepageContainer';
 
 // import './App.css';
 // import { connect } from 'react-redux'
@@ -25,6 +26,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={LandingPageContainer}/>
           <Route path="/create-account" component={AccountCreationContainer}/>
+          <Route path="/home" component={LoggedInHomepageContainer}/>
           <Route path="/about" component={AboutPageContainer}/>
           <Route path="/create-new-model" component={CreateNewModelContainer}/>
           <Route path="/:model-name" component={ModelViewContainer}/>

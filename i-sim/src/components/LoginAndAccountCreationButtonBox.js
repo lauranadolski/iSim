@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class LoginAndAccountCreationButtonBox extends React.Component {
   state = {
@@ -13,7 +14,7 @@ class LoginAndAccountCreationButtonBox extends React.Component {
   }
 
   handleSubmit = () => {
-    
+
   }
 
   render() {
@@ -35,6 +36,13 @@ class LoginAndAccountCreationButtonBox extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
+          <br />
+          <button>Log In</button>
+           <button>Forgot Password?</button>
+          <br />
+          <Link to="/create-account">
+            <button>Create Account</button>
+          </Link>
         </form>
       </div>
     )
