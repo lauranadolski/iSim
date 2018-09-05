@@ -35,6 +35,17 @@ class CreateNewModelSidebar extends React.Component {
     })
   }
 
+  handleDelete = (event) => {
+    event.preventDefault();
+    let targetId = parseInt(event.target.id[event.target.id.length - 1]);
+    let targetIndex = this.state.newModelCategories.findIndex(x => x.id === targetId);
+    let helperArray = [...this.state.newModelCategories];
+    helperArray.splice(targetIndex, 1)
+    this.setState({
+      newModelCategories: helperArray,
+    }, () => {console.log(this.state.newModelCategories)})
+  }
+
   renderCategoryFormInputs = () => {
     return this.state.newModelCategories.map((category) => {
       return (
@@ -45,9 +56,22 @@ class CreateNewModelSidebar extends React.Component {
             id={category.id}
             onChange={this.handleArrayChange}
            />
-          <button>x</button>
+          <button id={"delete-" + category.id} onClick={this.handleDelete}>x</button>
         </div>
       )
+    })
+  }
+
+  createNewCategory = (event) => {
+    event.preventDefault()
+    let newObjectPlaceholderId = (parseInt(this.state.newModelCategories[this.state.newModelCategories.length - 1].id) + 1)
+    let newObject =
+    { id: newObjectPlaceholderId,
+      name: "" }
+      let moreHelp = this.state.newModelCategories
+    let helperArray = [...this.state.newModelCategories, newObject]
+    this.setState({
+      newModelCategories: helperArray
     })
   }
 
@@ -63,7 +87,7 @@ class CreateNewModelSidebar extends React.Component {
           />
           {this.renderCategoryFormInputs()}
         </form>
-        <button>New Category</button>
+        <button onClick={this.createNewCategory}>New Category</button>
         <br />
         <button>Save</button>
       </div>
