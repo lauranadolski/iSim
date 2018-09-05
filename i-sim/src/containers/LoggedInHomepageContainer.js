@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from '../components/Header';
 import SavedModelsDisplay from '../components/SavedModelsDisplay';
+import { connect } from 'react-redux';
 
 class LoggedInHomepageContainer extends React.Component {
-
 
   render() {
     return (
@@ -14,10 +14,19 @@ class LoggedInHomepageContainer extends React.Component {
         <Link to="/create-new-model">
           <button>Create New Model</button>
         </Link>
-        <SavedModelsDisplay />
+        <SavedModelsDisplay models={this.props.models}/>
       </div>
     )
   }
 }
 
-export default LoggedInHomepageContainer;
+function mapStateToProps(state) {
+  return {
+    models: state.models
+  };
+}
+
+export default connect(mapStateToProps)(LoggedInHomepageContainer);
+
+// don't export ^^ ????
+// export default LoggedInHomepageContainer;
