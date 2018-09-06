@@ -75,21 +75,28 @@ class CreateNewModelSidebar extends React.Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Hello, I'm in the submit handler. Here's my new model title:", this.state.newModelTitle);
+    this.props.createNewModel({ name: this.state.newModelTitle });
+  }
+
   render() {
     return (
       <div>
         Hello, I am a create new model sidebar.
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.newModelTitle}
             name="newModelTitle"
             onChange={this.handleChange}
           />
           {this.renderCategoryFormInputs()}
-        </form>
+
         <button onClick={this.createNewCategory}>New Category</button>
         <br />
-        <button>Save</button>
+        <input type="submit" value="Save"/>
+        </form>
       </div>
     )
   }
