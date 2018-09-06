@@ -77,7 +77,7 @@ class CreateNewModelSidebar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Hello, I'm in the submit handler. Here's my new model title:", this.state.newModelTitle);
+    // console.log("Hello, I'm in the submit handler. Here's my state", this.state);
     this.props.createNewModel({ name: this.state.newModelTitle });
   }
 

@@ -15,7 +15,7 @@ class SavedModelsDisplay extends React.Component {
   render() {
     return (
       <div>
-        Hello, I am a saved models display.
+        My Saved Models:
         <ul>
           {this.renderSavedModels()}
         </ul>
