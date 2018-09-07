@@ -4,10 +4,24 @@ import Header from '../components/Header';
 import SavedModelsDisplay from '../components/SavedModelsDisplay';
 import { connect } from 'react-redux';
 import { createNewModel } from '../actions/index.js';
+import { addAllModels } from '../actions/index.js';
 import { bindActionCreators } from 'redux';
 
 
 class LoggedInHomepageContainer extends React.Component {
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/intersectionality_models')
+    .then(response => response.json())
+    .then( data => this.props.addAllModels(data) )
+    .then( console.log("hi", this.props.models) )
+  }
+
+  grabOnlyLoggedInUserModels = () => {
+    this.props.models.AllModels.filter( (model) => {
+      return model.user.id === 5
+    } )
+  }
 
   render() {
     return (
@@ -23,17 +37,11 @@ class LoggedInHomepageContainer extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    models: state.models
-  };
-}
 
-// Anything returned from this function will end up as props on this LoggedInHomepageContainer container.
-function mapDispatchToProps(dispatch) {
-  // Whenever a new model is "saved", the result should be passed to all our reducers.
-  return bindActionCreators({ createNewModel: createNewModel }, dispatch)
-}
+const mapStateToProps = state => ({ models: state.models })
 
-// This makes LoggedInHomepageContainer a container. It needs to know about this new dispatch method, createNewModel. It makes it available as a prop.
-export default connect(mapStateToProps, mapDispatchToProps)(LoggedInHomepageContainer);
+const mapDispatchToProps = dispatch => ({
+  addAllModels: thingie => dispatch(addAllModels(thingie))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoggedInHomepageContainer)

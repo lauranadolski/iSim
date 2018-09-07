@@ -3,7 +3,8 @@ import React from 'react';
 class SavedModelsDisplay extends React.Component {
 
   renderSavedModels = () => {
-    return this.props.models.map((savedModel) => {
+    console.log("hello your mom is hot", this.props.models.allModels);
+    return this.props.models.allModels.map((savedModel) => {
       return (
         <li key={savedModel.name}>
           {savedModel.name}
