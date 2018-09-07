@@ -6,7 +6,6 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        Hello, I am a header.
         <Link to="/home">
         <button>Home</button>
         </Link>

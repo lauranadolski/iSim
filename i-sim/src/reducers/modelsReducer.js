@@ -11,7 +11,7 @@ function modelsReducer(state = defaultModelState, action) {
     case 'GRAB_ALL_MODELS_FROM_API':
       return { ...state, allModels: action.allModelsFromAPI };
     case 'GRAB_USER_MODELS_FROM_API':
-      return { ...state, allModels: action.allModelsFromAPI };
+      return { ...state, loggedInUserModels: action.payload };
     default:
       return state;
   }

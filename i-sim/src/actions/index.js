@@ -17,6 +17,11 @@ export const addAllModels = allModelsFromAPI => ({
   allModelsFromAPI
 })
 
+export const grabUserModels = userModels => ({
+  type: 'GRAB_USER_MODELS_FROM_API',
+  payload: userModels
+})
+
 
 ///////////////////////////////////////////////////////////////////
 export const loginUser = (username, password) => {

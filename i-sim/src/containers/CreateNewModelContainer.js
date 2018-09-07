@@ -8,11 +8,9 @@ import { bindActionCreators } from 'redux';
 
 class CreateNewModelContainer extends React.Component {
 
-
   render() {
     return (
       <div>
-        Hello, I am a create new model container.
         <Header />
         <CreateNewModelSidebar createNewModel={this.props.createNewModel}/>
         <ThreeDModel />

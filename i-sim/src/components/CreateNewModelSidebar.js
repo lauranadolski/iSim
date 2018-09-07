@@ -77,14 +77,24 @@ class CreateNewModelSidebar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // console.log("Hello, I'm in the submit handler. Here's my state", this.state);
     this.props.createNewModel({ name: this.state.newModelTitle });
+    this.postNewModel(this.state);
+  }
+
+  postNewModel = (body) => {
+    const postConfig = {
+      method:'POST',
+      body: JSON.stringify(body),
+      headers: {
+        "Content-type": 'application/json'
+      }
+    }
+    return fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(response => response.json());
   }
 
   render() {
     return (
       <div>
-        Hello, I am a create new model sidebar.
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.newModelTitle}

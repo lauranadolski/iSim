@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from '../components/Header';
 import SavedModelsDisplay from '../components/SavedModelsDisplay';
 import { connect } from 'react-redux';
-import { createNewModel } from '../actions/index.js';
-import { addAllModels } from '../actions/index.js';
+import { createNewModel, addAllModels, grabUserModels } from '../actions/index.js';
 import { bindActionCreators } from 'redux';
 
 
@@ -13,13 +12,17 @@ class LoggedInHomepageContainer extends React.Component {
   componentDidMount() {
     fetch('http://localhost:3000/api/v1/intersectionality_models')
     .then(response => response.json())
-    .then( data => this.props.addAllModels(data) )
+    .then( data => {
+      this.props.addAllModels(data)
+      console.log("we are here", this.props.models.allModels)
+      this.props.grabUserModels(this.grabOnlyLoggedInUserModels())
+    })
     .then( console.log("hi", this.props.models) )
   }
 
   grabOnlyLoggedInUserModels = () => {
-    this.props.models.AllModels.filter( (model) => {
-      return model.user.id === 5
+    return this.props.models.allModels.filter( (model) => {
+      return model.user.id === 2
     } )
   }
 
@@ -41,7 +44,9 @@ class LoggedInHomepageContainer extends React.Component {
 const mapStateToProps = state => ({ models: state.models })
 
 const mapDispatchToProps = dispatch => ({
-  addAllModels: thingie => dispatch(addAllModels(thingie))
+  addAllModels: thingie => dispatch(addAllModels(thingie)),
+  grabUserModels: thingie => dispatch(grabUserModels(thingie)),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoggedInHomepageContainer)
