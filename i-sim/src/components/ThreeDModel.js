@@ -13,6 +13,11 @@ class ThreeDModel extends React.Component {
     // React will think that things have changed when they have not.
     this.cameraPosition = new THREE.Vector3(0, 0, 5);
 
+    this.objectPositions = [
+       new THREE.Vector3(1, 0, 0),
+       new THREE.Vector3(-1, 0, 0),
+    ]
+
     this.state = {
       cubeRotation: new THREE.Euler(),
     };
@@ -37,7 +42,9 @@ class ThreeDModel extends React.Component {
     const width = window.innerWidth; // canvas width
     const height = window.innerHeight; // canvas height
 
-    return (<React3
+    return (
+
+      <React3
       mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
       width={width}
       height={height}
@@ -54,7 +61,9 @@ class ThreeDModel extends React.Component {
 
           position={this.cameraPosition}
         />
+
         <mesh
+          position={this.objectPositions[0]}
           rotation={this.state.cubeRotation}
         >
           <boxGeometry
@@ -68,6 +77,7 @@ class ThreeDModel extends React.Component {
         </mesh>
 
         <mesh
+          position={this.objectPositions[1]}
           rotation={this.state.cubeRotation}
         >
           <boxGeometry
@@ -79,6 +89,9 @@ class ThreeDModel extends React.Component {
             color={0xff69b4}
           />
         </mesh>
+
+
+
 
       </scene>
     </React3>);
