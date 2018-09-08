@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from '../components/Header';
 import SavedModelsDisplay from '../components/SavedModelsDisplay';
+import ThreeDModel from '../components/ThreeDModel';
 import { connect } from 'react-redux';
 import { createNewModel, addAllModels, grabUserModels } from '../actions/index.js';
 import { bindActionCreators } from 'redux';
@@ -22,7 +23,7 @@ class LoggedInHomepageContainer extends React.Component {
 
   grabOnlyLoggedInUserModels = () => {
     return this.props.models.allModels.filter( (model) => {
-      return model.user.id === 2
+      return model.user.id === 3
     } )
   }
 
@@ -35,6 +36,10 @@ class LoggedInHomepageContainer extends React.Component {
           <button>Create New Model</button>
         </Link>
         <SavedModelsDisplay models={this.props.models} />
+
+        <br />
+        <br />
+        <ThreeDModel />
       </div>
     )
   }

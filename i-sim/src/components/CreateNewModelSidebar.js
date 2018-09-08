@@ -78,13 +78,19 @@ class CreateNewModelSidebar extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.createNewModel({ name: this.state.newModelTitle });
-    this.postNewModel(this.state);
+    // this.postNewModel();
   }
 
-  postNewModel = (body) => {
+  postNewModel = () => {
+    let newModelBody = {
+      name: this.state.newModelTitle,
+      note: "default note",
+      user_id: 3
+    }
+
     const postConfig = {
       method:'POST',
-      body: JSON.stringify(body),
+      body: JSON.stringify(newModelBody),
       headers: {
         "Content-type": 'application/json'
       }
