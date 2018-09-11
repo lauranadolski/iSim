@@ -3,6 +3,14 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Header extends React.Component {
 
+  logOutButton = () => {
+    if (this.props.user) {
+      return (
+        <button>Log out</button>
+      )
+    }
+  }
+
   render() {
     return (
       <div>
@@ -12,6 +20,7 @@ class Header extends React.Component {
         <Link to="/about">
         <button>About</button>
         </Link>
+        {this.logOutButton()}
       </div>
     )
   }

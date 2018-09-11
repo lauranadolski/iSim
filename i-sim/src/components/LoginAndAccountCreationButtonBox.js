@@ -1,5 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { bindActionCreators } from 'redux'
+import { withRouter, Redirect } from 'react-router'
+import { loginUser } from '../actions/user'
 
 class LoginAndAccountCreationButtonBox extends React.Component {
   state = {
@@ -13,14 +17,23 @@ class LoginAndAccountCreationButtonBox extends React.Component {
     })
   }
 
-  handleSubmit = () => {
-
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.loginUser(this.state.email, this.state.password)
+    this.setState({
+      email: '',
+      password: '' }, console.log("hello", this.state))
   }
 
   render() {
     return (
+
+      this.props.loggedIn ? (
+      <Redirect to="/home" />
+    ) : (
+
+
       <div>
-        Hello, I a login and account creation button box.
 
         <form onSubmit={this.handleSubmit}>
           <input
@@ -46,7 +59,26 @@ class LoginAndAccountCreationButtonBox extends React.Component {
         </form>
       </div>
     )
+)
   }
 }
+//
+// export default LoginAndAccountCreationButtonBox;
 
-export default LoginAndAccountCreationButtonBox;
+
+const mapStateToProps = ({ user: { authenticatingUser, failedLogin, error, user, loggedIn } }) => ({
+  authenticatingUser,
+  failedLogin,
+  error,
+  user,
+  loggedIn
+})
+
+const mapDispatchToProps = (dispatch) => ({ loginUser: bindActionCreators(loginUser, dispatch) })
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginAndAccountCreationButtonBox)
+)

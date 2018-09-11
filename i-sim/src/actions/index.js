@@ -9,59 +9,15 @@
 
 export const createNewModel = newModel => ({
   type: 'ADD_NEW_MODEL',
-  newModel
+  payload: newModel
 })
 
 export const addAllModels = allModelsFromAPI => ({
   type: 'GRAB_ALL_MODELS_FROM_API',
-  allModelsFromAPI
+  payload: allModelsFromAPI
 })
 
 export const grabUserModels = userModels => ({
   type: 'GRAB_USER_MODELS_FROM_API',
   payload: userModels
 })
-
-
-///////////////////////////////////////////////////////////////////
-export const loginUser = (username, password) => {
-  return dispatch => {
-    dispatch(authenticatingUser())
-    fetch('http://localhost:3000/api/v1/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify({ user: { username, password } })
-    })
-      .then(response => response.json())
-      // {user: {}, jwt: 'aaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbb.ccccccccccccccccccc'}
-      .then(({ user, jwt }) => {
-        localStorage.setItem('jwt', jwt)
-        dispatch(setCurrentUser(user))
-      })
-  }
-}
-
-export const fetchCurrentUser = () => {
-  // takes the token in localStorage and finds out who it belongs to
-  return dispatch => {
-    fetch('http://localhost:3000/api/v1/profile', {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`
-      }
-    })
-      .then(response => response.json())
-      .then(({ user }) => dispatch(setCurrentUser(user)))
-  }
-}
-
-export const setCurrentUser = userData => ({
-  type: 'SET_CURRENT_USER',
-  payload: userData
-})
-
-// tell our app we're currently fetching
-export const authenticatingUser = () => ({ type: 'AUTHENTICATING_USER' })
