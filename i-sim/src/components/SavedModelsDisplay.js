@@ -7,7 +7,7 @@ class SavedModelsDisplay extends React.Component {
     console.log("hello these are models", this.props.models);
     return this.props.models.loggedInUserModels.map((savedModel) => {
       return (
-        <SavedModelsDetailCard model={savedModel} />
+        <SavedModelsDetailCard model={savedModel} key={savedModel.id} selectDetailModelView={this.props.selectDetailModelView}/>
       )
     })
   }

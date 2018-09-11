@@ -1,6 +1,7 @@
 const defaultModelState = {
   allModels: [],
-  loggedInUserModels: []
+  loggedInUserModels: [],
+  selectedModelDetailView: 0
 };
 
 function modelsReducer(state = defaultModelState, action) {
@@ -13,6 +14,8 @@ function modelsReducer(state = defaultModelState, action) {
       return { ...state, allModels: action.payload };
     case 'GRAB_USER_MODELS_FROM_API':
       return { ...state, loggedInUserModels: action.payload };
+    case 'SELECT_DETAIL_MODEL_VIEW':
+      return { ...state, selectedModelDetailView: action.payload };
     default:
       return state;
   }

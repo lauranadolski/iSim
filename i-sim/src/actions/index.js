@@ -21,3 +21,8 @@ export const grabUserModels = userModels => ({
   type: 'GRAB_USER_MODELS_FROM_API',
   payload: userModels
 })
+
+export const selectDetailModelView = modelID => ({
+  type: 'SELECT_DETAIL_MODEL_VIEW',
+  payload: modelID
+})

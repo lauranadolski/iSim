@@ -11,11 +11,17 @@ class Header extends React.Component {
     }
   }
 
+  resetDetailViewModel = () => {
+    if(this.props.selectDetailModelView) {
+      this.props.selectDetailModelView(0)
+    }
+  }
+
   render() {
     return (
       <div>
         <Link to="/home">
-        <button>Home</button>
+        <button onClick={this.resetDetailViewModel}>Home</button>
         </Link>
         <Link to="/about">
         <button>About</button>
