@@ -12,10 +12,15 @@ class ThreeDModel extends React.Component {
     // construct the position vector here, because if we use 'new' within render,
     // React will think that things have changed when they have not.
     this.cameraPosition = new THREE.Vector3(0, 0, 5);
+    this.directionalLightPosition = new THREE.Vector3(0, 1, 0);
+    this.scenePosition = new THREE.Vector3(0, 0, 0);
 
     this.objectPositions = [
-       new THREE.Vector3(1.5, 0, 0),
-       new THREE.Vector3(1, 0, 0),
+       new THREE.Vector3(0, 0, 0),
+       new THREE.Vector3(1, 0, 1),
+       new THREE.Vector3(0, 1.5, 0),
+       new THREE.Vector3(.5, .75, .5),
+       new THREE.Vector3(-2, 0, 0),
        new THREE.Vector3(-2, 0, 0),
     ]
 
@@ -42,19 +47,24 @@ class ThreeDModel extends React.Component {
   generateIndividualSphere = () => {
     return (
       <mesh
-        position={this.objectPositions[2]}
+        position={this.objectPositions[1]}
         rotation={this.state.objectRotation}
       >
         <sphereGeometry
-          radius={75}
+          radius={1}
           widthSegments={20}
-          heightSegments={10}
+          heightSegments={20}
         />
-        <meshBasicMaterial
-          color={0xefdeef}
+        <materialResource
+          resourceId="material"
         />
+
       </mesh>
     )
+  }
+
+  generateAllSpheres = () => {
+
   }
 
   render() {
@@ -64,12 +74,32 @@ class ThreeDModel extends React.Component {
     return (
 
       <React3
-      mainCamera="camera"
-      width={width}
-      height={height}
-      onAnimate={this._onAnimate}
-      clearColor={0xffffff}
+        mainCamera="camera"
+        width={width}
+        height={height}
+        antialias
+        pixelRatio={window.devicePixelRatio}
+        onAnimate={this._onAnimate}
+        clearColor={0xffffff}
       >
+
+      <resources>
+        <texture
+          resourceId="texture"
+          url='/jpeg_sphere_texture.png'
+          wrapS={THREE.RepeatWrapping}
+          wrapT={THREE.RepeatWrapping}
+          anisotropy={12}
+        />
+        <meshNormalMaterial
+          resourceId="material"
+          side={THREE.DoubleSide}
+        >
+          <textureResource
+            resourceId="texture"
+          />
+        </meshNormalMaterial>
+      </resources>
 
       <scene>
         <perspectiveCamera
@@ -80,23 +110,29 @@ class ThreeDModel extends React.Component {
           far={1000}
           position={this.cameraPosition}
         />
+        <ambientLight
+          color={0x404040}
+        />
+        <directionalLight
+          color={0xffffff}
+          position={this.directionalLightPosition}
+          lookAt={this.scenePosition}
+        />
 
         <mesh
           position={this.objectPositions[0]}
           rotation={this.state.objectRotation}
         >
-          <boxGeometry
-            width={.5}
-            height={.5}
-            depth={.5}
+          <sphereGeometry
+            radius={1}
+            widthSegments={10}
+            heightSegments={10}
           />
-          <meshBasicMaterial
-            color={0x00ff00}
+          <materialResource
+            resourceId="material"
           />
+
         </mesh>
-
-
-
 
         <mesh
           position={this.objectPositions[1]}
@@ -105,13 +141,43 @@ class ThreeDModel extends React.Component {
           <sphereGeometry
             radius={1}
             widthSegments={20}
-            heightSegments={10}
+            heightSegments={20}
           />
-          <meshBasicMaterial
-            color={0xefdeef}
+          <materialResource
+            resourceId="material"
           />
+
         </mesh>
 
+        <mesh
+          position={this.objectPositions[2]}
+          rotation={this.state.objectRotation}
+        >
+          <sphereGeometry
+            radius={1}
+            widthSegments={20}
+            heightSegments={20}
+          />
+          <materialResource
+            resourceId="material"
+          />
+
+        </mesh>
+
+        <mesh
+          position={this.objectPositions[3]}
+          rotation={this.state.objectRotation}
+        >
+          <sphereGeometry
+            radius={1}
+            widthSegments={20}
+            heightSegments={20}
+          />
+          <materialResource
+            resourceId="material"
+          />
+
+        </mesh>
 
       </scene>
     </React3>);
@@ -135,3 +201,36 @@ export default ThreeDModel;
 //     color={0xff69b4}
 //   />
 // </mesh>
+
+// <meshBasicMaterial
+//   color={0xefdeef}
+// />
+
+
+// <mesh
+//   position={this.objectPositions[0]}
+//   rotation={this.state.objectRotation}
+// >
+//   <boxGeometry
+//     width={.5}
+//     height={.5}
+//     depth={.5}
+//   />
+//   <meshBasicMaterial
+//     color={0x00ff00}
+//   />
+// </mesh>
+
+// <perspectiveCamera
+//    fov={45}
+//    aspect={width / height}
+//    near={1}
+//    far={2000}
+//    lookAt={this.scenePosition}
+//    name="mainCamera"
+//    position={new THREE.Vector3(
+//      Math.cos(timer) * 800,
+//      400,
+//      Math.sin(timer) * 800
+//    )}
+// />
