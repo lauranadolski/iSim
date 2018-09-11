@@ -17,11 +17,13 @@ class ThreeDModel extends React.Component {
 
     this.objectPositions = [
        new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1, 0, 1),
-       new THREE.Vector3(0, 1.5, 0),
-       new THREE.Vector3(.5, .75, .5),
+       new THREE.Vector3(1, 0, .5),
+       new THREE.Vector3(0, 2, -.5),
+       new THREE.Vector3(1, 1, 0),
+       new THREE.Vector3(-1, 1, 0),
        new THREE.Vector3(-2, 0, 0),
-       new THREE.Vector3(-2, 0, 0),
+       new THREE.Vector3(-1.25, -1, 0.25),
+       new THREE.Vector3(.5, -1.5, 0)
     ]
 
     this.state = {
@@ -166,6 +168,66 @@ class ThreeDModel extends React.Component {
 
         <mesh
           position={this.objectPositions[3]}
+          rotation={this.state.objectRotation}
+        >
+          <sphereGeometry
+            radius={1}
+            widthSegments={10}
+            heightSegments={10}
+          />
+          <materialResource
+            resourceId="material"
+          />
+
+        </mesh>
+
+        <mesh
+          position={this.objectPositions[4]}
+          rotation={this.state.objectRotation}
+        >
+          <sphereGeometry
+            radius={1}
+            widthSegments={10}
+            heightSegments={10}
+          />
+          <materialResource
+            resourceId="material"
+          />
+
+        </mesh>
+
+        <mesh
+          position={this.objectPositions[5]}
+          rotation={this.state.objectRotation}
+        >
+          <sphereGeometry
+            radius={1}
+            widthSegments={20}
+            heightSegments={20}
+          />
+          <materialResource
+            resourceId="material"
+          />
+
+        </mesh>
+
+        <mesh
+          position={this.objectPositions[6]}
+          rotation={this.state.objectRotation}
+        >
+          <sphereGeometry
+            radius={1}
+            widthSegments={20}
+            heightSegments={20}
+          />
+          <materialResource
+            resourceId="material"
+          />
+
+        </mesh>
+
+        <mesh
+          position={this.objectPositions[7]}
           rotation={this.state.objectRotation}
         >
           <sphereGeometry
