@@ -8,9 +8,8 @@ class ModelViewContainer extends React.Component {
   render() {
     return (
       <div>
-        Hello, I am a model view container. This is my model ID number:
-        {this.props.selectedModel.id}
-        {console.log("Hey, I'm in the model view container. Here's my selected model props", this.props.selectedModel)}
+        {console.log("my model prop cateegories look like this", this.props.selectedModel.categories)}
+        {this.props.selectedModel.name}
         <ThreeDModel selectedModel={this.props.selectedModel}/>
       </div>
     )
