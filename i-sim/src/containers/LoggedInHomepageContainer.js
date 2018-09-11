@@ -44,12 +44,20 @@ class LoggedInHomepageContainer extends React.Component {
   }
   }
 
+  findSelectedModelFromId = () => {
+    return this.props.models.loggedInUserModels.find((model) => {
+      return model.id === this.props.models.selectedModelDetailView
+    })
+  }
+
 
   showSavedModelsOrDetails = () => {
 
     if (this.props.models.selectedModelDetailView > 0) {
       return (
-        <ModelViewContainer modelID={this.props.models.selectedModelDetailView}/>
+        <ModelViewContainer
+        selectedModel={this.findSelectedModelFromId()}
+        />
       )
 
     } else {

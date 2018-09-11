@@ -9,7 +9,8 @@ class ModelViewContainer extends React.Component {
     return (
       <div>
         Hello, I am a model view container. This is my model ID number:
-        {this.props.modelID}
+        {this.props.selectedModel.id}
+        {console.log("Hey, I'm in the model view container. Here's my selected model props", this.props.selectedModel)}
         <ThreeDModel />
       </div>
     )
