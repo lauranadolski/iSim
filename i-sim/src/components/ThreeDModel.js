@@ -14,12 +14,13 @@ class ThreeDModel extends React.Component {
     this.cameraPosition = new THREE.Vector3(0, 0, 5);
 
     this.objectPositions = [
+       new THREE.Vector3(1.5, 0, 0),
        new THREE.Vector3(1, 0, 0),
-       new THREE.Vector3(-1, 0, 0),
+       new THREE.Vector3(-2, 0, 0),
     ]
 
     this.state = {
-      cubeRotation: new THREE.Euler(),
+      objectRotation: new THREE.Euler(),
     };
 
     this._onAnimate = () => {
@@ -29,13 +30,31 @@ class ThreeDModel extends React.Component {
       // this helps with updates and pure rendering.
       // React will be sure that the rotation has now updated.
       this.setState({
-        cubeRotation: new THREE.Euler(
-          this.state.cubeRotation.x + 0.01,
-          this.state.cubeRotation.y + 0.01,
+        objectRotation: new THREE.Euler(
+          this.state.objectRotation.x + 0.01,
+          this.state.objectRotation.y + 0.01,
           0
         ),
       });
     };
+  }
+
+  generateIndividualSphere = () => {
+    return (
+      <mesh
+        position={this.objectPositions[2]}
+        rotation={this.state.objectRotation}
+      >
+        <sphereGeometry
+          radius={75}
+          widthSegments={20}
+          heightSegments={10}
+        />
+        <meshBasicMaterial
+          color={0xefdeef}
+        />
+      </mesh>
+    )
   }
 
   render() {
@@ -45,12 +64,13 @@ class ThreeDModel extends React.Component {
     return (
 
       <React3
-      mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
+      mainCamera="camera"
       width={width}
       height={height}
-
       onAnimate={this._onAnimate}
-    >
+      clearColor={0xffffff}
+      >
+
       <scene>
         <perspectiveCamera
           name="camera"
@@ -58,13 +78,12 @@ class ThreeDModel extends React.Component {
           aspect={width / height}
           near={0.1}
           far={1000}
-
           position={this.cameraPosition}
         />
 
         <mesh
           position={this.objectPositions[0]}
-          rotation={this.state.cubeRotation}
+          rotation={this.state.objectRotation}
         >
           <boxGeometry
             width={.5}
@@ -76,21 +95,22 @@ class ThreeDModel extends React.Component {
           />
         </mesh>
 
+
+
+
         <mesh
           position={this.objectPositions[1]}
-          rotation={this.state.cubeRotation}
+          rotation={this.state.objectRotation}
         >
-          <boxGeometry
-            width={1}
-            height={1}
-            depth={1}
+          <sphereGeometry
+            radius={1}
+            widthSegments={20}
+            heightSegments={10}
           />
           <meshBasicMaterial
-            color={0xff69b4}
+            color={0xefdeef}
           />
         </mesh>
-
-
 
 
       </scene>
@@ -99,3 +119,19 @@ class ThreeDModel extends React.Component {
 }
 
 export default ThreeDModel;
+
+
+
+// <mesh
+//   position={this.objectPositions[1]}
+//   rotation={this.state.objectRotation}
+// >
+//   <boxGeometry
+//     width={1}
+//     height={1}
+//     depth={1}
+//   />
+//   <meshBasicMaterial
+//     color={0xff69b4}
+//   />
+// </mesh>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import LoginAndAccountCreationButtonBox from '../components/LoginAndAccountCreationButtonBox';
+import ThreeDModel from '../components/ThreeDModel';
 
 class LandingPageContainer extends React.Component {
 
@@ -11,6 +12,7 @@ class LandingPageContainer extends React.Component {
         Hello, I am a landing page container.
         <Header />
         <LoginAndAccountCreationButtonBox />
+        <ThreeDModel />
       </div>
     )
   }
