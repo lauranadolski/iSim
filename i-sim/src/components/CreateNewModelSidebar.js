@@ -77,25 +77,28 @@ class CreateNewModelSidebar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.createNewModel({ name: this.state.newModelTitle });
-    // this.postNewModel();
+    // this.props.createNewModel({ name: this.state.newModelTitle });
+    this.postNewModel();
   }
 
   postNewModel = () => {
     let newModelBody = {
       name: this.state.newModelTitle,
       note: "default note",
-      user_id: 3
+      user_id: this.props.user.user.id
     }
 
     const postConfig = {
       method:'POST',
       body: JSON.stringify(newModelBody),
       headers: {
-        "Content-type": 'application/json'
+        "Content-type": 'application/json',
+        'Authorization': `Bearer ${localStorage.jwt}`
       }
     }
-    return fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(response => response.json());
+
+    return fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig)
+    // .then(response => response.json())
   }
 
   render() {

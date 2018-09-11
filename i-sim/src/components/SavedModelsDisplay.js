@@ -1,4 +1,5 @@
 import React from 'react';
+import SavedModelsDetailCard from './SavedModelsDetailCard';
 
 class SavedModelsDisplay extends React.Component {
 
@@ -6,9 +7,7 @@ class SavedModelsDisplay extends React.Component {
     console.log("hello these are models", this.props.models);
     return this.props.models.loggedInUserModels.map((savedModel) => {
       return (
-        <li key={savedModel.name}>
-          {savedModel.name}
-        </li>
+        <SavedModelsDetailCard model={savedModel} />
       )
     })
   }

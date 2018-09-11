@@ -22,19 +22,15 @@ class LoginAndAccountCreationButtonBox extends React.Component {
     this.props.loginUser(this.state.email, this.state.password)
     this.setState({
       email: '',
-      password: '' }, console.log("hello", this.state))
+      password: '' })
   }
 
   render() {
     return (
 
-      this.props.loggedIn ? (
-      <Redirect to="/home" />
-    ) : (
-
+      this.props.loggedIn ? ( <Redirect to="/home" /> ) : (
 
       <div>
-
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -62,8 +58,6 @@ class LoginAndAccountCreationButtonBox extends React.Component {
 )
   }
 }
-//
-// export default LoginAndAccountCreationButtonBox;
 
 
 const mapStateToProps = ({ user: { authenticatingUser, failedLogin, error, user, loggedIn } }) => ({
@@ -76,9 +70,4 @@ const mapStateToProps = ({ user: { authenticatingUser, failedLogin, error, user,
 
 const mapDispatchToProps = (dispatch) => ({ loginUser: bindActionCreators(loginUser, dispatch) })
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(LoginAndAccountCreationButtonBox)
-)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginAndAccountCreationButtonBox))

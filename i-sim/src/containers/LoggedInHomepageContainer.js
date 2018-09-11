@@ -6,6 +6,7 @@ import ThreeDModel from '../components/ThreeDModel';
 import { connect } from 'react-redux';
 import { createNewModel, addAllModels, grabUserModels } from '../actions/index.js';
 import { bindActionCreators } from 'redux';
+import { withRouter, Redirect } from 'react-router'
 
 
 class LoggedInHomepageContainer extends React.Component {
@@ -21,6 +22,7 @@ class LoggedInHomepageContainer extends React.Component {
       }
     }
 
+    if (this.props.user)(
     fetch(intersectionalityModelsAPIURL, getConfig)
     .then(response => response.json())
     // .then(data => console.log("HIIIIIIIIASDSADS", data))
@@ -30,6 +32,7 @@ class LoggedInHomepageContainer extends React.Component {
       console.log("we are here", this.props.models.allModels)
       this.props.grabUserModels(this.grabOnlyLoggedInUserModels())
     })
+  )
 
 
 
@@ -47,16 +50,21 @@ class LoggedInHomepageContainer extends React.Component {
   }
 
   grabOnlyLoggedInUserModels = () => {
-    console.log("I am helping", this.props.user.user.id)
+    // console.log("I am helping", this.props.user.user.id)
     // debugger;
-    // if (this.props.user.)
+  if (this.props.user.user) {
     return this.props.models.allModels.filter( (model) => {
       return model.user.id === this.props.user.user.id
     } )
   }
+  }
 
   render() {
     return (
+
+
+
+
       <div>
         Hello, I am a logged in homepage container.
         <Header user={this.props.user}/>
@@ -69,6 +77,7 @@ class LoggedInHomepageContainer extends React.Component {
         <br />
         <ThreeDModel />
       </div>
+
     )
   }
 }

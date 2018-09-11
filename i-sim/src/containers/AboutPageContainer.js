@@ -9,12 +9,12 @@ class AboutPageContainer extends React.Component {
     return (
       <div>
         Hello, I am an about page container.
-        <Header user={this.props.user}/>
+        <Header user={this.props.user.user}/>
       </div>
     )
   }
 }
 
-export default AboutPageContainer;
-
 const mapStateToProps = state => ({ models: state.models, user: state.user })
+
+export default connect(mapStateToProps, null)(AboutPageContainer)
