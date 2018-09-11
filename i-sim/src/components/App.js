@@ -9,10 +9,15 @@ import CreateNewModelContainer from '../containers/CreateNewModelContainer';
 import ModelViewContainer from '../containers/ModelViewContainer';
 import ModelEditContainer from '../containers/ModelEditContainer';
 import LoggedInHomepageContainer from '../containers/LoggedInHomepageContainer';
-
+import withAuth from '../hocs/withAuth';
 
 // import { connect } from 'react-redux'
 // import { changeExampleMessage } from './actions'
+
+const AuthedLoggedInHomepageContainer = withAuth(LoggedInHomepageContainer, "/")
+const AuthedCreateNewModelContainer = withAuth(CreateNewModelContainer, "/")
+const AuthedModelViewContainer = withAuth(ModelViewContainer, "/")
+const AuthedModelEditContainer = withAuth(ModelEditContainer, "/")
 
 class App extends Component {
 
@@ -26,11 +31,11 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={LandingPageContainer}/>
           <Route path="/create-account" component={AccountCreationContainer}/>
-          <Route path="/home" component={LoggedInHomepageContainer}/>
+          <Route path="/home" component={AuthedLoggedInHomepageContainer}/>
           <Route path="/about" component={AboutPageContainer}/>
-          <Route path="/create-new-model" component={CreateNewModelContainer}/>
-          <Route path="/:model-name" component={ModelViewContainer}/>
-          <Route path="/:model-name/edit" component={ModelEditContainer}/>
+          <Route path="/create-new-model" component={AuthedCreateNewModelContainer}/>
+          <Route path="/:model-name" component={AuthedModelViewContainer}/>
+          <Route path="/:model-name/edit" component={AuthedModelEditContainer}/>
         </Switch>
     );
   }

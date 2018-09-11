@@ -13,6 +13,8 @@ import { withRouter, Redirect } from 'react-router'
 class LoggedInHomepageContainer extends React.Component {
 
   componentDidMount() {
+    console.log("I'm in the logged-in homepage container. Here's my logged in state status:", this.props.user.loggedIn)
+
     let intersectionalityModelsAPIURL = 'http://localhost:3000/api/v1/intersectionality_models'
 
     let getConfig = {

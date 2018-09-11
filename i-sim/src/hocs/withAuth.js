@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
-import * as actions from '../actions'
+import * as actions from '../actions/user'
 
-const withAuth = (WrappedComponent) => {
+const withAuth = (WrappedComponent, path='/') => {
   class AuthorizedComponent extends React.Component {
     componentDidMount() {
       // POTENTIAL SECURITY FLAW!!! my tokens don't expire
@@ -18,7 +18,7 @@ const withAuth = (WrappedComponent) => {
       //   return <Loader active inline="centered" />
       // }
       else {
-        return <Redirect to="/" />
+        return <Redirect to={path} />
       }
     }
   }

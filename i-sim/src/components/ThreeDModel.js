@@ -17,65 +17,189 @@ class ThreeDModel extends React.Component {
     this.scenePosition = new THREE.Vector3(0, 0, 0);
 
 
-    this.objectPositionsOne = [
-       new THREE.Vector3(0, 0, 0)
+    this.allObjectPositions = [
+      new THREE.Vector3(0, 0, 0),
+     new THREE.Vector3(1.25, 0, .35),
+     new THREE.Vector3(0, 2, -.5),
+     new THREE.Vector3(1, 1, 0),
+     new THREE.Vector3(-1, 1, -.15),
+     new THREE.Vector3(-2, 0, 0),
+     new THREE.Vector3(-1.25, -1, 0.25),
+     new THREE.Vector3(.5, -1.5, 0)
     ]
 
-    this.objectPositionsTwo = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35)
-    ]
-
-    this.objectPositionsThree = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35),
-       new THREE.Vector3(0, 2, -.5)
-    ]
-
-    this.objectPositionsFour = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35),
-       new THREE.Vector3(0, 2, -.5),
-       new THREE.Vector3(1, 1, 0),
-    ]
-
-    this.objectPositionsFive = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35),
-       new THREE.Vector3(0, 2, -.5),
-       new THREE.Vector3(1, 1, 0),
-       new THREE.Vector3(-1, 1, -.15)
-    ]
-
-    this.objectPositionsSix = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35),
-       new THREE.Vector3(0, 2, -.5),
-       new THREE.Vector3(1, 1, 0),
-       new THREE.Vector3(-1, 1, -.15),
-       new THREE.Vector3(-2, 0, 0)
-    ]
-
-    this.objectPositionsSeven = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35),
-       new THREE.Vector3(0, 2, -.5),
-       new THREE.Vector3(1, 1, 0),
-       new THREE.Vector3(-1, 1, -.15),
-       new THREE.Vector3(-2, 0, 0),
-       new THREE.Vector3(-1.25, -1, 0.25)
-    ]
-
-    this.objectPositionsEight = [
-       new THREE.Vector3(0, 0, 0),
-       new THREE.Vector3(1.25, 0, .35),
-       new THREE.Vector3(0, 2, -.5),
-       new THREE.Vector3(1, 1, 0),
-       new THREE.Vector3(-1, 1, -.15),
-       new THREE.Vector3(-2, 0, 0),
-       new THREE.Vector3(-1.25, -1, 0.25),
-       new THREE.Vector3(.5, -1.5, 0)
-    ]
+    // this.allSphereConfigurations = [
+    //   (<mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>),
+    //   ( <div>
+    //
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   </div>),
+    //   ( <div>
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    // </div>),
+    //   ( <div>
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[3]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   </div>),
+    //   ( <div>
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[3]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[4]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   </div>),
+    //   (<div>
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[3]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[4]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[5]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   </div>),
+    //   ( <div>
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[3]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[4]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[5]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //
+    //   <mesh position={this.allObjectPositions[6]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //  </div>),
+    //   (<div>
+    //     <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[3]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[4]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[5]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[6]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    //   <mesh position={this.allObjectPositions[7]} rotation={this.state.objectRotation}>
+    //     <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+    //     <materialResource resourceId="material"/>
+    //   </mesh>
+    // </div>)
+    // ]
 
     this.state = {
       objectRotation: new THREE.Euler(),
@@ -97,27 +221,16 @@ class ThreeDModel extends React.Component {
     };
   }
 
-  generateIndividualSphere = () => {
-    return (
-      <mesh
-        position={this.objectPositions[1]}
-        rotation={this.state.objectRotation}
-      >
-        <sphereGeometry
-          radius={1}
-          widthSegments={20}
-          heightSegments={20}
-        />
-        <materialResource
-          resourceId="material"
-        />
+  generateSpheres = () => {
+    let numberOfCategories = this.props.selectedModel.categories.length
+    let targetArrayIndex = numberOfCategories - 1
+    debugger;
 
-      </mesh>
-    )
-  }
-
-  generateAllSpheres = () => {
-
+    if ((numberOfCategories > 0) && (numberOfCategories < 9)) {
+      return (
+        this.allSphereConfigurations[targetArrayIndex]
+      )
+    }
   }
 
   render() {
@@ -172,45 +285,6 @@ class ThreeDModel extends React.Component {
           lookAt={this.scenePosition}
         />
 
-        <mesh position={this.objectPositionsEight[0]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[1]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[2]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[3]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[4]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[5]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[6]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
-
-        <mesh position={this.objectPositionsEight[7]} rotation={this.state.objectRotation}>
-          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
-          <materialResource resourceId="material"/>
-        </mesh>
 
       </scene>
     </React3>);
@@ -218,3 +292,44 @@ class ThreeDModel extends React.Component {
 }
 
 export default ThreeDModel;
+
+
+
+
+
+     //  [ new THREE.Vector3(0, 0, 0)],
+     //  [ new THREE.Vector3(0, 0, 0),
+     //    new THREE.Vector3(1.25, 0, .35)],
+     //  [ new THREE.Vector3(0, 0, 0),
+     //   new THREE.Vector3(1.25, 0, .35),
+     //   new THREE.Vector3(0, 2, -.5) ],
+     // [ new THREE.Vector3(0, 0, 0),
+     //    new THREE.Vector3(1.25, 0, .35),
+     //    new THREE.Vector3(0, 2, -.5),
+     //    new THREE.Vector3(1, 1, 0) ],
+     //  [ new THREE.Vector3(0, 0, 0),
+     //     new THREE.Vector3(1.25, 0, .35),
+     //     new THREE.Vector3(0, 2, -.5),
+     //     new THREE.Vector3(1, 1, 0),
+     //     new THREE.Vector3(-1, 1, -.15) ],
+     // [ new THREE.Vector3(0, 0, 0),
+     //    new THREE.Vector3(1.25, 0, .35),
+     //    new THREE.Vector3(0, 2, -.5),
+     //    new THREE.Vector3(1, 1, 0),
+     //    new THREE.Vector3(-1, 1, -.15),
+     //    new THREE.Vector3(-2, 0, 0) ],
+     //  [ new THREE.Vector3(0, 0, 0),
+     //     new THREE.Vector3(1.25, 0, .35),
+     //     new THREE.Vector3(0, 2, -.5),
+     //     new THREE.Vector3(1, 1, 0),
+     //     new THREE.Vector3(-1, 1, -.15),
+     //     new THREE.Vector3(-2, 0, 0),
+     //     new THREE.Vector3(-1.25, -1, 0.25) ],
+     // [ new THREE.Vector3(0, 0, 0),
+     //    new THREE.Vector3(1.25, 0, .35),
+     //    new THREE.Vector3(0, 2, -.5),
+     //    new THREE.Vector3(1, 1, 0),
+     //    new THREE.Vector3(-1, 1, -.15),
+     //    new THREE.Vector3(-2, 0, 0),
+     //    new THREE.Vector3(-1.25, -1, 0.25),
+     //    new THREE.Vector3(.5, -1.5, 0) ]

@@ -68,3 +68,11 @@ export const failedLogin = (errorMsg) => ({
 
 // tell our app we're currently fetching
 export const authenticatingUser = () => ({ type: 'AUTHENTICATING_USER' })
+
+module.export = {
+  loginUser,
+  fetchCurrentUser,
+  setCurrentUser,
+  failedLogin,
+  authenticatingUser,
+}

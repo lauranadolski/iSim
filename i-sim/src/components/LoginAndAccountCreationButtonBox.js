@@ -6,6 +6,12 @@ import { withRouter, Redirect } from 'react-router'
 import { loginUser } from '../actions/user'
 
 class LoginAndAccountCreationButtonBox extends React.Component {
+
+  componentDidMount = () => {
+    console.log("I'm in the login/account creation component. Here's my logged-in state status:", this.props.loggedIn)
+  }
+
+
   state = {
     email: "Email Address",
     password: "Password"
@@ -27,7 +33,6 @@ class LoginAndAccountCreationButtonBox extends React.Component {
 
   render() {
     return (
-
       this.props.loggedIn ? ( <Redirect to="/home" /> ) : (
 
       <div>
