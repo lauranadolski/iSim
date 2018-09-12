@@ -54,8 +54,10 @@ class LoginAndAccountCreationButtonBox extends React.Component {
           <button className="Account-creation-log-in-button">Log In</button>
            <button className="Account-creation-log-in-button">Forgot Password?</button>
           <br />
+          <br />
+          <hr id="Little-line" />
           <Link to="/create-account">
-            <button className="Account-creation-log-in-button">Create Account</button>
+            <button className="Account-creation-log-in-button" id="Create-account-button">Create Account</button>
           </Link>
         </form>
       </div>
