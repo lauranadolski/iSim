@@ -2,16 +2,8 @@ import React from 'react';
 
 class EditModelSidebar extends React.Component {
   state = {
-    newModelTitle: "New Model Title",
-    newModelCategories: [
-      { id: 1,
-        name: "example 1"},
-      { id: 2,
-        name: "example 2"},
-      { id: 3,
-        name: "example 3"},
-      ],
-    newModelID: null,
+    editModelTitle: this.props.selectedModelToEdit.name,
+    editModelCategories: this.props.selectedModelToEdit.categories,
   }
 
   handleArrayChange = (event) => {
@@ -48,7 +40,7 @@ class EditModelSidebar extends React.Component {
   }
 
   renderCategoryFormInputs = () => {
-    return this.state.newModelCategories.map((category) => {
+    return this.state.editModelCategories.map((category) => {
       return (
         <div key={category.id}>
           <input
@@ -122,8 +114,6 @@ class EditModelSidebar extends React.Component {
         }
       }
 
-      // debugger;
-
        fetch('http://localhost:3000/api/v1/categories', categoryPostConfig).then(response => console.log(response))
     })
   }
@@ -131,11 +121,11 @@ class EditModelSidebar extends React.Component {
   render() {
     return (
       <div>
-      {console.log("PUPPIES", this.props.selectedModelToEdit)}
+
         <form onSubmit={this.handleSubmit}>
           <input
-            value={this.state.newModelTitle}
-            name="newModelTitle"
+            value={this.state.editModelTitle}
+            name="editModelTitle"
             onChange={this.handleChange}
           />
           {this.renderCategoryFormInputs()}
