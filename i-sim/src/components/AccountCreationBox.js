@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class AccountCreationBox extends React.Component {
   state = {
-    name: "Name",
+    firstName: "First Name",
+    lastName: "Last Name",
     email: "Email Address",
     password: "Password"
   }
@@ -14,19 +15,51 @@ class AccountCreationBox extends React.Component {
     })
   }
 
-  handleSubmit = () => {
-
+  handleSubmit = (event) => {
+    
+    event.preventDefault();
+    this.postNewUser();
   }
+
+  postNewUser = () => {
+
+    let newUserBody = {
+      user: {
+        first_name: this.state.firstName,
+        last_name: this.state.lastName,
+        email_address: this.state.email_address,
+        password: this.state.password
+      }
+    }
+
+    const postConfig = {
+      method:'POST',
+      body: JSON.stringify(newUserBody),
+      headers: {
+        "Content-type": 'application/json',
+      }
+    }
+
+
+    fetch('http://localhost:3000/api/v1/users', postConfig)
+  }
+
 
   render() {
     return (
       <div>
-        Hello, I am account creation box.
         <form label='Create Account' onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="name"
-            value={this.state.name}
+            name="firstName"
+            value={this.state.firstName}
+            onChange={this.handleChange}
+          />
+          <br />
+          <input
+            type="text"
+            name="lastName"
+            value={this.state.lastName}
             onChange={this.handleChange}
           />
           <br />
@@ -44,9 +77,9 @@ class AccountCreationBox extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          <Link to="/home">
+
             <button>Register</button>
-          </Link>
+
         </form>
       </div>
 

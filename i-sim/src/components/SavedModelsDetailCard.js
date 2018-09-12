@@ -1,4 +1,5 @@
 import React from 'react';
+import EditModelSidebar from './EditModelSidebar';
 
 class SavedModelsDetailCard extends React.Component {
 
@@ -19,6 +20,9 @@ class SavedModelsDetailCard extends React.Component {
 
   }
 
+  editModelHelper = () => {
+    <EditModelSidebar targetModel={this.props.model.id}/>
+  }
 
   detailViewHelper = () => {
     this.props.selectDetailModelView(this.props.model.id)
@@ -29,6 +33,7 @@ class SavedModelsDetailCard extends React.Component {
         <li key={this.props.model.name}>
           {this.props.model.name}
           <button onClick={this.detailViewHelper}>Show Detailed View</button>
+          <button onClick={this.editModelHelper}>Edit</button>
           <button onClick={this.handleDelete}>X</button>
         </li>
       )

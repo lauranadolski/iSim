@@ -3,10 +3,17 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Header extends React.Component {
 
+  handleLogOut = () => {
+    localStorage.clear()
+    window.location.reload();
+  }
+
   logOutButton = () => {
     if (this.props.user) {
       return (
-        <button>Log out</button>
+
+        <button onClick={this.handleLogOut}>Log out</button>
+
       )
     }
   }

@@ -8,7 +8,6 @@ class AboutPageContainer extends React.Component {
   render() {
     return (
       <div>
-        Hello, I am an about page container.
         <Header user={this.props.user.user}/>
       </div>
     )
