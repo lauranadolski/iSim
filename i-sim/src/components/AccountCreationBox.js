@@ -53,7 +53,8 @@ class AccountCreationBox extends React.Component {
     return (
       this.state.redirectAfterAccountCreation ? (<Redirect to="/home" />) :
       (
-      <div>
+      <div className="Create-account-box">
+      Create Account
         <form label='Create Account' onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -84,7 +85,7 @@ class AccountCreationBox extends React.Component {
           />
           <br />
 
-            <button>Register</button>
+            <button id="Register-account-button">Register</button>
 
         </form>
       </div>

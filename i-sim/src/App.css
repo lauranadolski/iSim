@@ -124,10 +124,36 @@ input:focus {
 #Create-account-button {
   background-image: linear-gradient(-90deg, #C6E98B, #BFF6E1);
   padding: 10px 15px;
-  margin-top: 7px;
+  margin-top: 12px;
 }
 
 #Little-line {
   width: 70%;
   margin-top: -2px;
+}
+
+.Create-account-box {
+  background-image: linear-gradient(-90deg, #F2D5F5, #FFFFFF);
+  opacity: 1;
+  height: 200px;
+  padding: 20px 0px 45px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  width: 15%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#Register-account-button {
+  background-image: linear-gradient(-90deg, #C6E98B, #BFF6E1);
+  padding: 10px 15px;
+  margin-top: 12px;
 }
