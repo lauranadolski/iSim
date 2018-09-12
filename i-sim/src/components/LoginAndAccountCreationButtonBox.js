@@ -17,6 +17,10 @@ class LoginAndAccountCreationButtonBox extends React.Component {
     password: "Password"
   }
 
+  forgotPassword = () => {
+    alert(`¯\_(ツ)_/¯`);
+  }
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -52,7 +56,7 @@ class LoginAndAccountCreationButtonBox extends React.Component {
           />
           <br />
           <button className="Account-creation-log-in-button">Log In</button>
-           <button className="Account-creation-log-in-button">Forgot Password?</button>
+           <button className="Account-creation-log-in-button" onClick={this.forgotPassword}>Forgot Password?</button>
           <br />
           <br />
           <hr id="Little-line" />

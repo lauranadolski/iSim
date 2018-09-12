@@ -54,9 +54,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.Header-nav-button-container {
+.Header-nav-button-container-two-buttons {
   position: absolute;
   left: 80%;
+  top: 10%;
+}
+
+.Header-nav-button-container-three-buttons {
+  position: absolute;
+  left: 70%;
   top: 10%;
 }
 
