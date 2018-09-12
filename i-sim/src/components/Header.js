@@ -12,7 +12,7 @@ class Header extends React.Component {
     if (this.props.user) {
       return (
 
-        <button onClick={this.handleLogOut}>Log out</button>
+        <button onClick={this.handleLogOut} className={"Header-nav-button"}>Log out</button>
 
       )
     }
@@ -37,14 +37,18 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Header">
+      <div className="iSim-logo">iSim</div>
+      <div className="Header-nav-button-container">
+
         <Link to="/home">
-        <button onClick={this.clickHelper}>Home</button>
+        <button onClick={this.clickHelper} className={"Header-nav-button"} >Home</button>
         </Link>
-        <Link to="/about">
-        <button>About</button>
+        <Link to="/about" >
+        <button className={"Header-nav-button"}>About</button>
         </Link>
         {this.logOutButton()}
+        </div>
       </div>
     )
   }

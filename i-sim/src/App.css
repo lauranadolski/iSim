@@ -26,3 +26,40 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Header {
+  background-color: #EEE8F4;
+  background-image: linear-gradient(-90deg, #85CF88, #EEE8F4);
+  opacity: 0.9;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.Header-nav-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.Header-nav-button-container {
+  position: absolute;
+  left: 80%;
+  top: 10%;
+}
+
+.iSim-logo {
+  font-size: 100px;
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  color: black;
+}
