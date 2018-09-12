@@ -8,6 +8,7 @@ class ModelViewContainer extends React.Component {
   render() {
     return (
       <div>
+        {console.log(this.props.selectedModel)}
         {this.props.selectedModel.name}
         <ThreeDModel selectedModel={this.props.selectedModel}/>
       </div>

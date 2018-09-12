@@ -131,7 +131,7 @@ class EditModelSidebar extends React.Component {
   render() {
     return (
       <div>
-      {console.log("flower", this.props.selectedModelToEdit)}
+      {console.log("PUPPIES", this.props.selectedModelToEdit)}
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.newModelTitle}

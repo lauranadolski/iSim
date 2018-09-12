@@ -54,7 +54,7 @@ class LoggedInHomepageContainer extends React.Component {
 
   findSelectedModelFromIdEditView = () => {
     return this.props.models.loggedInUserModels.find((model) => {
-      return model.id === this.props.models.selectModelToEdit
+      return model.id === this.props.models.targetEditModel
     })
   }
 
@@ -70,8 +70,7 @@ class LoggedInHomepageContainer extends React.Component {
 
     } else if (this.props.models.targetEditModel > 0) {
       return (
-        <EditModelSidebar toggleEditingModelBoolean={this.props.toggleEditingModelBoolean}
-        selectModelToEdit={this.props.selectModelToEdit}
+        <EditModelSidebar
         selectedModelToEdit={this.findSelectedModelFromIdEditView()}
         />)
 
