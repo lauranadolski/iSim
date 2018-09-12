@@ -77,9 +77,13 @@ class LoggedInHomepageContainer extends React.Component {
     } else {
       return (
         <div>
+        <div className="Create-new-model-button">
+        Create New Model
+        <br />
         <Link to="/create-new-model">
-          <button>Create New Model</button>
+          <button className="Create-new-model-plus-button"><div className="Plus-text">+</div></button>
         </Link>
+        </div>
 
         <SavedModelsDisplay models={this.props.models} selectDetailModelView={this.props.selectDetailModelView}
         toggleEditingModelBoolean={this.props.toggleEditingModelBoolean}
