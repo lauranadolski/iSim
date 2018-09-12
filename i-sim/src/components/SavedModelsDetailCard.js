@@ -21,7 +21,10 @@ class SavedModelsDetailCard extends React.Component {
   }
 
   editModelHelper = () => {
-    <EditModelSidebar targetModel={this.props.model.id}/>
+    console.log("hey, i'm here!")
+    // debugger;
+    this.props.selectModelToEdit(this.props.model.id)
+    // this.props.toggleEditingModelBoolean(this.props.model.id)
   }
 
   detailViewHelper = () => {

@@ -1,7 +1,9 @@
 const defaultModelState = {
   allModels: [],
   loggedInUserModels: [],
-  selectedModelDetailView: 0
+  selectedModelDetailView: 0,
+  editingModel: false,
+  targetEditModel: 0,
 };
 
 function modelsReducer(state = defaultModelState, action) {
@@ -16,6 +18,11 @@ function modelsReducer(state = defaultModelState, action) {
       return { ...state, loggedInUserModels: action.payload };
     case 'SELECT_DETAIL_MODEL_VIEW':
       return { ...state, selectedModelDetailView: action.payload };
+    case 'TOGGLE_EDITING_MODEL_BOOLEAN':
+      return { ...state, selectedModelDetailView: !state.editingModel };
+    case 'SELECT_MODEL_TO_EDIT':
+    console.log("hey i made it", action.payload)
+      return { ...state, targetEditModel: action.payload };
     default:
       return state;
   }
