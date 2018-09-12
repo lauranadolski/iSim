@@ -18,7 +18,12 @@ class SixSpheres extends React.Component {
 
 
     this.allObjectPositions = [
-      new THREE.Vector3(0, 0, 0)
+      new THREE.Vector3(0, 0, 0),
+     new THREE.Vector3(1.25, 0, .35),
+     new THREE.Vector3(0, 2, -.5),
+     new THREE.Vector3(1, 1, 0),
+     new THREE.Vector3(-1, 1, -.15),
+     new THREE.Vector3(-2, 0, 0)
     ]
 
     this.state = {
@@ -106,6 +111,31 @@ class SixSpheres extends React.Component {
         />
 
         <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+          <materialResource resourceId="material"/>
+        </mesh>
+
+        <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
+          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+          <materialResource resourceId="material"/>
+        </mesh>
+
+        <mesh position={this.allObjectPositions[2]} rotation={this.state.objectRotation}>
+          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+          <materialResource resourceId="material"/>
+        </mesh>
+
+        <mesh position={this.allObjectPositions[3]} rotation={this.state.objectRotation}>
+          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+          <materialResource resourceId="material"/>
+        </mesh>
+
+        <mesh position={this.allObjectPositions[4]} rotation={this.state.objectRotation}>
+          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+          <materialResource resourceId="material"/>
+        </mesh>
+
+        <mesh position={this.allObjectPositions[5]} rotation={this.state.objectRotation}>
           <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
           <materialResource resourceId="material"/>
         </mesh>

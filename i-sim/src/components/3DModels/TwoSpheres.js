@@ -18,7 +18,8 @@ class TwoSpheres extends React.Component {
 
 
     this.allObjectPositions = [
-      new THREE.Vector3(0, 0, 0)
+      new THREE.Vector3(0, 0, 0),
+     new THREE.Vector3(1.25, 0, .35)
     ]
 
     this.state = {
@@ -106,6 +107,11 @@ class TwoSpheres extends React.Component {
         />
 
         <mesh position={this.allObjectPositions[0]} rotation={this.state.objectRotation}>
+          <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
+          <materialResource resourceId="material"/>
+        </mesh>
+
+        <mesh position={this.allObjectPositions[1]} rotation={this.state.objectRotation}>
           <sphereGeometry radius={1} widthSegments={20} heightSegments={20}/>
           <materialResource resourceId="material"/>
         </mesh>
