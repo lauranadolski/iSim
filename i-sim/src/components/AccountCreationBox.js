@@ -1,12 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 class AccountCreationBox extends React.Component {
   state = {
     firstName: "First Name",
     lastName: "Last Name",
     email: "Email Address",
-    password: "Password"
+    password: "Password",
+    redirectAfterAccountCreation: false,
   }
 
   handleChange = (event) => {
@@ -16,7 +17,7 @@ class AccountCreationBox extends React.Component {
   }
 
   handleSubmit = (event) => {
-    
+
     event.preventDefault();
     this.postNewUser();
   }
@@ -27,7 +28,7 @@ class AccountCreationBox extends React.Component {
       user: {
         first_name: this.state.firstName,
         last_name: this.state.lastName,
-        email_address: this.state.email_address,
+        email_address: this.state.email,
         password: this.state.password
       }
     }
@@ -42,11 +43,16 @@ class AccountCreationBox extends React.Component {
 
 
     fetch('http://localhost:3000/api/v1/users', postConfig)
+    .then(this.setState({
+      redirectAfterAccountCreation: true
+    }))
   }
 
 
   render() {
     return (
+      this.state.redirectAfterAccountCreation ? (<Redirect to="/home" />) :
+      (
       <div>
         <form label='Create Account' onSubmit={this.handleSubmit}>
           <input
@@ -82,7 +88,7 @@ class AccountCreationBox extends React.Component {
 
         </form>
       </div>
-
+    )
     )
   }
 }
