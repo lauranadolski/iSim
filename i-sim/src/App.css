@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+
 .App {
   text-align: center;
 }
@@ -47,7 +50,6 @@
   font-size: 16px;
   margin-right: 10px;
   margin-left: 10px;
-
 }
 
 .Header-nav-button-container {
@@ -57,9 +59,54 @@
 }
 
 .iSim-logo {
-  font-size: 100px;
+  font-size: 110px;
   position: absolute;
   left: 5%;
   top: 15%;
   color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.Login-account-creation-box {
+  background-image: linear-gradient(-90deg, #F2D5F5, #FFFFFF);
+  opacity: 1;
+  height: 150px;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  width: 15%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 200px;
+}
+
+input {
+    padding: 10px 10px;
+    outline: none;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+input:focus {
+    border: 3px solid #555;
+    outline: none;
+}
+
+.Account-creation-log-in-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-left: 5px;
 }

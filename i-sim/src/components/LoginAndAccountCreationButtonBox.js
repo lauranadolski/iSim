@@ -35,7 +35,7 @@ class LoginAndAccountCreationButtonBox extends React.Component {
     return (
       this.props.loggedIn ? ( <Redirect to="/home" /> ) : (
 
-      <div>
+      <div className="Login-account-creation-box">
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -51,11 +51,11 @@ class LoginAndAccountCreationButtonBox extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          <button>Log In</button>
-           <button>Forgot Password?</button>
+          <button className="Account-creation-log-in-button">Log In</button>
+           <button className="Account-creation-log-in-button">Forgot Password?</button>
           <br />
           <Link to="/create-account">
-            <button>Create Account</button>
+            <button className="Account-creation-log-in-button">Create Account</button>
           </Link>
         </form>
       </div>

@@ -42,10 +42,10 @@ class Header extends React.Component {
       <div className="Header-nav-button-container">
 
         <Link to="/home">
-        <button onClick={this.clickHelper} className={"Header-nav-button"} >Home</button>
+        <button onClick={this.clickHelper} className="Header-nav-button" >Home</button>
         </Link>
         <Link to="/about" >
-        <button className={"Header-nav-button"}>About</button>
+        <button className="Header-nav-button">About</button>
         </Link>
         {this.logOutButton()}
         </div>
