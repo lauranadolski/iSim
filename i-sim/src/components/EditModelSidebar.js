@@ -70,10 +70,10 @@ class EditModelSidebar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.postNewModel();
+    this.editModel();
   }
 
-  postNewModel = () => {
+  editModel = () => {
     let newModelBody = {
       name: this.state.newModelTitle,
       note: "default note",
@@ -89,10 +89,10 @@ class EditModelSidebar extends React.Component {
       }
     }
 
-    fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.postNewCategories())
+    fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.editCategories())
   }
 
-  postNewCategories = () => {
+  editCategories = () => {
 
     this.state.newModelCategories.map((newCategory) => {
       let targetIMID = ((this.props.models.loggedInUserModels[this.props.models.loggedInUserModels.length - 1].id) + 1)
