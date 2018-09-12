@@ -12,8 +12,8 @@ class CreateNewModelContainer extends React.Component {
     return (
       <div>
         <Header />
-        <CreateNewModelSidebar createNewModel={this.props.createNewModel} user={this.props.user}/>
-        <ThreeDModel />
+        <CreateNewModelSidebar createNewModel={this.props.createNewModel} user={this.props.user} models={this.props.models}/>
+
       </div>
     )
   }

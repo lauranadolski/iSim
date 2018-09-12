@@ -10,7 +10,8 @@ class CreateNewModelSidebar extends React.Component {
         name: "example 2"},
       { id: 3,
         name: "example 3"},
-      ]
+      ],
+    newModelID: null,
   }
 
   handleArrayChange = (event) => {
@@ -77,7 +78,6 @@ class CreateNewModelSidebar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // this.props.createNewModel({ name: this.state.newModelTitle });
     this.postNewModel();
   }
 
@@ -97,8 +97,35 @@ class CreateNewModelSidebar extends React.Component {
       }
     }
 
-    return fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig)
-    // .then(response => response.json())
+    fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.postNewCategories())
+  }
+
+  postNewCategories = () => {
+
+    this.state.newModelCategories.map((newCategory) => {
+      let targetIMID = ((this.props.models.loggedInUserModels[this.props.models.loggedInUserModels.length - 1].id) + 1)
+      let targetCategoryName = newCategory.name
+
+      // debugger;
+
+      let newCategoryBody = {
+        name: targetCategoryName,
+        description: "default placeholder description",
+        intersectionality_model_id: targetIMID
+      }
+      let categoryPostConfig = {
+        method:'POST',
+        body: JSON.stringify(newCategoryBody),
+        headers: {
+          "Content-type": 'application/json',
+          'Authorization': `Bearer ${localStorage.jwt}`
+        }
+      }
+
+      // debugger;
+
+       fetch('http://localhost:3000/api/v1/categories', categoryPostConfig).then(response => console.log(response))
+    })
   }
 
   render() {
