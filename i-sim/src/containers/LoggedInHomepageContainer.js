@@ -93,7 +93,9 @@ class LoggedInHomepageContainer extends React.Component {
   render() {
     return (
       <div>
-        <Header user={this.props.user} selectDetailModelView={this.props.selectDetailModelView}/>
+        <Header user={this.props.user} selectDetailModelView={this.props.selectDetailModelView}
+        selectModelToEdit={this.props.selectModelToEdit}
+        />
         {this.showSavedModelsOrDetailsOrEdit()}
         <br />
         <br />

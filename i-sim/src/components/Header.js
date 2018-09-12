@@ -24,11 +24,22 @@ class Header extends React.Component {
     }
   }
 
+  resetEditModelView = () => {
+    if(this.props.selectModelToEdit) {
+      this.props.selectModelToEdit(0)
+    }
+  }
+
+  clickHelper = () => {
+    this.resetDetailViewModel()
+    this.resetEditModelView()
+  }
+
   render() {
     return (
       <div>
         <Link to="/home">
-        <button onClick={this.resetDetailViewModel}>Home</button>
+        <button onClick={this.clickHelper}>Home</button>
         </Link>
         <Link to="/about">
         <button>About</button>
