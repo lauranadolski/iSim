@@ -11,7 +11,7 @@ class LandingPageContainer extends React.Component {
       <div>
         <Header />
         <LoginAndAccountCreationButtonBox />
-        <ThreeDModel />
+
       </div>
     )
   }
