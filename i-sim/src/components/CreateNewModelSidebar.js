@@ -100,18 +100,40 @@ class CreateNewModelSidebar extends React.Component {
     fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.postNewCategories())
   }
 
+  targetIMIDDeterminer = () => {
+    if (this.props.models.loggedInUserModels.length < 1) {
+
+      let lastModelObject = this.props.models.allModels[this.props.models.allModels.length - 1]
+
+      let lastModelID = lastModelObject.id
+
+      let targetIMID = (lastModelID + 1)
+      return targetIMID
+
+    } else {
+
+    let targetIMID = ((this.props.models.loggedInUserModels[this.props.models.loggedInUserModels.length - 1].id) + 1)
+    return targetIMID
+    }
+
+
+
+  }
+
+
   postNewCategories = () => {
 
     this.state.newModelCategories.map((newCategory) => {
-      let targetIMID = ((this.props.models.loggedInUserModels[this.props.models.loggedInUserModels.length - 1].id) + 1)
-      let targetCategoryName = newCategory.name
 
+
+
+      let targetCategoryName = newCategory.name
       // debugger;
 
       let newCategoryBody = {
         name: targetCategoryName,
         description: "default placeholder description",
-        intersectionality_model_id: targetIMID
+        intersectionality_model_id: this.targetIMIDDeterminer()
       }
       let categoryPostConfig = {
         method:'POST',
