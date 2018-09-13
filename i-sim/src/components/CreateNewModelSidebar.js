@@ -12,6 +12,7 @@ class CreateNewModelSidebar extends React.Component {
         name: "Category 3"},
       ],
     newModelID: null,
+    helperthing: null
   }
 
   handleArrayChange = (event) => {
@@ -124,11 +125,7 @@ class CreateNewModelSidebar extends React.Component {
   postNewCategories = () => {
 
     this.state.newModelCategories.map((newCategory) => {
-
-
-
       let targetCategoryName = newCategory.name
-      // debugger;
 
       let newCategoryBody = {
         name: targetCategoryName,
@@ -144,9 +141,7 @@ class CreateNewModelSidebar extends React.Component {
         }
       }
 
-      // debugger;
-
-       fetch('http://localhost:3000/api/v1/categories', categoryPostConfig).then(response => console.log(response))
+       fetch('http://localhost:3000/api/v1/categories', categoryPostConfig)
     })
   }
 
