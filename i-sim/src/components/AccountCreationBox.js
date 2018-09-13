@@ -78,7 +78,7 @@ class AccountCreationBox extends React.Component {
           />
           <br />
           <input
-            type="text"
+            type="password"
             name="password"
             value={this.state.password}
             onChange={this.handleChange}

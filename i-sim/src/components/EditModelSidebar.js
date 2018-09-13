@@ -49,7 +49,8 @@ class EditModelSidebar extends React.Component {
             id={category.id}
             onChange={this.handleArrayChange}
            />
-          <button id={"delete-" + category.id} onClick={this.handleDelete}>x</button>
+          <button id={"delete-" + category.id} onClick={this.handleDelete}
+          className="New-category-delete-button">x</button>
         </div>
       )
     })
@@ -120,21 +121,25 @@ class EditModelSidebar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Create-new-model-container">
 
         <form onSubmit={this.handleSubmit}>
           <input
+            id="New-model-title-input"
             value={this.state.editModelTitle}
             name="editModelTitle"
             onChange={this.handleChange}
           />
           {this.renderCategoryFormInputs()}
 
-        <button onClick={this.createNewCategory}>New Category</button>
+        <button id="Add-category-button" onClick={this.createNewCategory}>Add Category</button><br />
         <br />
+        <hr id="Little-line" />
+        <br />
+
         <input type="submit" value="Save"/>
         </form>
-      </div>
+        </div>
     )
   }
 }
