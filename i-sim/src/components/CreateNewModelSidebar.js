@@ -98,7 +98,7 @@ class CreateNewModelSidebar extends React.Component {
       }
     }
 
-    fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.postNewCategories())
+    fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.postNewCategories)
   }
 
   targetIMIDDeterminer = () => {
@@ -121,7 +121,6 @@ class CreateNewModelSidebar extends React.Component {
 
   }
 
-
   postNewCategories = () => {
 
     this.state.newModelCategories.map((newCategory) => {
@@ -141,7 +140,7 @@ class CreateNewModelSidebar extends React.Component {
         }
       }
 
-       fetch('http://localhost:3000/api/v1/categories', categoryPostConfig)
+        fetch('http://localhost:3000/api/v1/categories', categoryPostConfig)
     })
   }
 
