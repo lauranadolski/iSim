@@ -8,8 +8,7 @@ class ModelViewContainer extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.props.selectedModel)}
-        {this.props.selectedModel.name}
+        <div className="Model-view-name-text">{this.props.selectedModel.name}</div>
         <ThreeDModel selectedModel={this.props.selectedModel}/>
       </div>
     )

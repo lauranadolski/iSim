@@ -414,7 +414,7 @@ input:focus {
   border-style: solid;
   border-width: 1px;
   border-color: #979797;
-  min-width: 200px;
+  min-width: 220px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-style: italic;
@@ -437,4 +437,15 @@ input:focus {
   margin-top: 12px;
   width: 30px;
   height: 38px;
+}
+
+.Model-view-name-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 55px;
+  text-align: right;
+  left: 70%;
+  top: 25%;
+  position: absolute;
 }
