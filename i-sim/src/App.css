@@ -399,3 +399,42 @@ input:focus {
   top: 37%;
   position: absolute;
 }
+
+.Create-new-model-container {
+  background-image: linear-gradient(-180deg, #8A98D4, #D8D8D8);
+  opacity: 1;
+  height: 30%;
+  padding: 20px 0px 45px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  width: 15%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#Add-category-button {
+  background-color: white;
+  padding: 10px 15px;
+  margin-top: 12px;
+  width: 150px;
+}
+
+#New-model-title-input {
+  width: 180px;
+}
+
+.New-category-delete-button {
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  margin-top: 12px;
+  width: 30px;
+  height: 38px;
+}
