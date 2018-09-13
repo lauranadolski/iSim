@@ -15,7 +15,14 @@ class AboutPageContainer extends React.Component {
 
           <div id="About-me-contact-text">About Me / Contact</div>
           <div className="About-me-container">
-          My name is.. your mom.
+          My name is Laura Nadolski. I'm a full-stack web developer based in New York City. <br /> I attended Flatiron School's Full Stack Web Development program and graduated in September 2018.
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          You can find me on LinkedIn or reach out via email.
           </div>
 
           <div id="History-text">History</div>

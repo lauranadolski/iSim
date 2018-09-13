@@ -349,11 +349,13 @@ input:focus {
 
 .About-me-container {
   background-color: #ffffff;
-  left: 80%;
   top: 10%;
   width: 98%;
   height: 46%;
   margin-top: 15px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .History-container {
