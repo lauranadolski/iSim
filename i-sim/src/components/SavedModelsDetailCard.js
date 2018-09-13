@@ -16,8 +16,12 @@ class SavedModelsDetailCard extends React.Component {
       }
     }
 
-    fetch(deleteRequestURL, deleteConfig)
+    fetch(deleteRequestURL, deleteConfig).then(this.forceRefresh())
 
+  }
+
+  forceRefresh = () => {
+    window.location.reload();
   }
 
   editModelHelper = () => {

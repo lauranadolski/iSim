@@ -37,10 +37,23 @@ class ThreeDModel extends React.Component {
     )
   }
 
+  generateCategoryList = () => {
+    return this.props.selectedModel.categories.map ((category) => {
+      return (
+        <div className="Category-list-on-side">
+        {category.name}
+        </div>
+      )
+    })
+  }
+
   render() {
     return(
       <div>
       {this.selectSphereComponent()}
+      <div id="Category-list-container">
+      {this.generateCategoryList()}
+      </div>
       </div>
     )
   }

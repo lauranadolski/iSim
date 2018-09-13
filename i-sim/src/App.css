@@ -448,3 +448,18 @@ input:focus {
   top: 25%;
   position: absolute;
 }
+
+.Category-list-on-side {
+
+}
+
+#Category-list-container {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 35px;
+  text-align: right;
+  left: 85%;
+  top: 35%;
+  position: absolute;
+}
