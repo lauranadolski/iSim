@@ -31,14 +31,26 @@ class SavedModelsDetailCard extends React.Component {
     this.props.selectDetailModelView(this.props.model.id)
   }
 
+
+
+
+
   renderSavedModelDetails = () => {
       return (
-        <li key={this.props.model.name}>
+        <div>
+        <div key={this.props.model.name} className="Saved-model-card">
           {this.props.model.name}
-          <button onClick={this.detailViewHelper}>Show Detailed View</button>
-          <button onClick={this.editModelHelper}>Edit</button>
-          <button onClick={this.handleDelete}>X</button>
-        </li>
+
+
+          <button onClick={this.detailViewHelper} className="Saved-model-detail-view-button"></button>
+
+
+          <button onClick={this.editModelHelper} className="Saved-model-edit-view-button">Edit</button>
+          <button onClick={this.handleDelete}
+          className="Saved-model-edit-view-button">X</button>
+        </div>
+        <br />
+        </div>
       )
   }
 

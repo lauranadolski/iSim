@@ -79,6 +79,7 @@ class LoggedInHomepageContainer extends React.Component {
         <div>
         <div className="Create-new-model-button">
         Create New Model
+        
         <br />
         <Link to="/create-new-model">
           <button className="Create-new-model-plus-button"><div className="Plus-text">+</div></button>

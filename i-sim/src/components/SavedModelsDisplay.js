@@ -16,8 +16,8 @@ class SavedModelsDisplay extends React.Component {
 
   render() {
     return (
-      <div>
-        My Saved Models:
+      <div className="Saved-models-container">
+        <div className="My-saved-models-label">Saved Models</div>
         <ul>
           {this.renderSavedModels()}
         </ul>
