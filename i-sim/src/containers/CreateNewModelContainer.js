@@ -12,21 +12,20 @@ class CreateNewModelContainer extends React.Component {
     return (
       <div>
         <Header />
-        <CreateNewModelSidebar createNewModel={this.props.createNewModel}/>
-        <ThreeDModel />
+        <CreateNewModelSidebar createNewModel={this.props.createNewModel} user={this.props.user} models={this.props.models}/>
+
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({ models: state.models })
+const mapStateToProps = state => ({ models: state.models, user: state.user })
 
 const mapDispatchToProps = dispatch => ({
   createNewModel: thingie => dispatch(createNewModel(thingie))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateNewModelContainer)
-
 
 
 

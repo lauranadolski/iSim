@@ -5,12 +5,14 @@ class CreateNewModelSidebar extends React.Component {
     newModelTitle: "New Model Title",
     newModelCategories: [
       { id: 1,
-        name: "example 1"},
+        name: "Category 1"},
       { id: 2,
-        name: "example 2"},
+        name: "Category 2"},
       { id: 3,
-        name: "example 3"},
-      ]
+        name: "Category 3"},
+      ],
+    newModelID: null,
+    helperthing: null
   }
 
   handleArrayChange = (event) => {
@@ -56,7 +58,7 @@ class CreateNewModelSidebar extends React.Component {
             id={category.id}
             onChange={this.handleArrayChange}
            />
-          <button id={"delete-" + category.id} onClick={this.handleDelete}>x</button>
+          <button id={"delete-" + category.id} onClick={this.handleDelete} className="New-category-delete-button">x</button>
         </div>
       )
     })
@@ -77,40 +79,89 @@ class CreateNewModelSidebar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.createNewModel({ name: this.state.newModelTitle });
-    // this.postNewModel();
+    this.postNewModel();
   }
 
   postNewModel = () => {
     let newModelBody = {
       name: this.state.newModelTitle,
       note: "default note",
-      user_id: 3
+      user_id: this.props.user.user.id
     }
 
     const postConfig = {
       method:'POST',
       body: JSON.stringify(newModelBody),
       headers: {
-        "Content-type": 'application/json'
+        "Content-type": 'application/json',
+        'Authorization': `Bearer ${localStorage.jwt}`
       }
     }
-    return fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(response => response.json());
+
+    fetch('http://localhost:3000/api/v1/intersectionality_models', postConfig).then(this.postNewCategories)
+  }
+
+  targetIMIDDeterminer = () => {
+    if (this.props.models.loggedInUserModels.length < 1) {
+
+      let lastModelObject = this.props.models.allModels[this.props.models.allModels.length - 1]
+
+      let lastModelID = lastModelObject.id
+
+      let targetIMID = (lastModelID + 1)
+      return targetIMID
+
+    } else {
+
+    let targetIMID = ((this.props.models.loggedInUserModels[this.props.models.loggedInUserModels.length - 1].id) + 1)
+    return targetIMID
+    }
+
+
+
+  }
+
+  postNewCategories = () => {
+
+    this.state.newModelCategories.map((newCategory) => {
+      let targetCategoryName = newCategory.name
+
+      let newCategoryBody = {
+        name: targetCategoryName,
+        description: "default placeholder description",
+        intersectionality_model_id: this.targetIMIDDeterminer()
+      }
+      let categoryPostConfig = {
+        method:'POST',
+        body: JSON.stringify(newCategoryBody),
+        headers: {
+          "Content-type": 'application/json',
+          'Authorization': `Bearer ${localStorage.jwt}`
+        }
+      }
+
+        fetch('http://localhost:3000/api/v1/categories', categoryPostConfig)
+    })
   }
 
   render() {
     return (
-      <div>
+      <div className="Create-new-model-container">
         <form onSubmit={this.handleSubmit}>
           <input
+            id="New-model-title-input"
             value={this.state.newModelTitle}
             name="newModelTitle"
             onChange={this.handleChange}
           />
           {this.renderCategoryFormInputs()}
 
-        <button onClick={this.createNewCategory}>New Category</button>
+        <button onClick={this.createNewCategory} id="Add-category-button">Add Category</button>
         <br />
+        <br />
+        <hr id="Little-line" />
+        <br />
+
         <input type="submit" value="Save"/>
         </form>
       </div>

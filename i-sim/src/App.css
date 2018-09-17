@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+
 .App {
   text-align: center;
 }
@@ -25,4 +28,438 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.Header {
+  background-color: #EEE8F4;
+  background-image: linear-gradient(-90deg, #85CF88, #EEE8F4);
+  opacity: 0.9;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.Header-nav-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Header-nav-button-container-two-buttons {
+  position: absolute;
+  left: 80%;
+  top: 10%;
+}
+
+.Header-nav-button-container-three-buttons {
+  position: absolute;
+  left: 70%;
+  top: 10%;
+}
+
+.iSim-logo {
+  font-size: 110px;
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.Login-account-creation-box {
+  background-image: linear-gradient(-90deg, #F2D5F5, #FFFFFF);
+  opacity: 1;
+  height: 200px;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  width: 15%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 200px;
+}
+
+input {
+    padding: 10px 10px;
+    outline: none;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    width: 150px;
+}
+
+input:focus {
+    border: 3px solid #555;
+    outline: none;
+}
+
+.Account-creation-log-in-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  margin-top: 10px;
+}
+
+#Create-account-button {
+  background-image: linear-gradient(-90deg, #C6E98B, #BFF6E1);
+  padding: 10px 15px;
+  margin-top: 12px;
+}
+
+#Little-line {
+  width: 70%;
+  margin-top: -2px;
+}
+
+.Create-account-box {
+  background-image: linear-gradient(-90deg, #F2D5F5, #FFFFFF);
+  opacity: 1;
+  height: 200px;
+  padding: 20px 0px 45px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  width: 15%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#Register-account-button {
+  background-image: linear-gradient(-90deg, #C6E98B, #BFF6E1);
+  padding: 10px 15px;
+  margin-top: 12px;
+}
+
+.Create-new-model-button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  position: absolute;
+  left: 30%;
+  top: 40%;
+}
+
+.Create-new-model-plus-button {
+  background-image: linear-gradient(-90deg, #F2D5F5, #FFFFFF);
+  background-color: #fffff;
+  border: solid;
+  border-width: .5px;
+  border-color: #979797;
+  color: black;
+  text-decoration: none;
+  color: white;
+  font-size: 100px;
+  margin-right: 10px;
+  margin-left: -15px;
+  margin-top: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.Plus-text {
+  font-size: 150px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900px;
+  margin-top: -40px;
+  margin-left: -2px;
+}
+
+.My-saved-models-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.Saved-models-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  display: grid | inline-grid
+}
+
+.Saved-model-card {
+  background-image: linear-gradient(-90deg, #BFF6E1, #C6E98B);
+  background-color: #fffff;
+  border: solid;
+  border-width: .5px;
+  border-color: #979797;
+  color: black;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 100px;
+  width: 100px;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100px;
+}
+
+.Saved-model-detail-view-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  height: 60px;
+  width: 100px;
+  margin-top: -25px;
+  margin-left: 0px;
+  opacity: 0;
+}
+
+.Saved-model-edit-view-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 13px;
+  margin-top: 0px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Saved-model-delete-button {
+  background-color: #fffff;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-left: 65px;
+  margin-bottom: -5px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+.About-page-container {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.About-this-project-container {
+  background-image: linear-gradient(-90deg, #F2D5F5, #FFFFFF);
+  opacity: 1;
+  height: 600px;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  width: 50%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 700px;
+}
+
+.FAQ-container {
+  background-image: linear-gradient(-90deg, #BFF6E1, #C6E98B);
+  opacity: 1;
+  height: 600px;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  width: 50%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 700px;
+}
+
+#FAQ-and-resources {
+  position: absolute;
+  left: 19%;
+  top: 130%;
+  word-wrap: break-word;
+  width: 100px;
+  height: 100px;
+}
+
+#About-this-project {
+  position: absolute;
+  left: 19%;
+  top: 37%;
+  word-wrap: break-word;
+  width: 100px;
+  height: 100px;
+}
+
+.About-me-container {
+  background-color: #ffffff;
+  top: 10%;
+  width: 98%;
+  height: 46%;
+  margin-top: 15px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.History-container {
+  background-color: #ffffff;
+  left: 80%;
+  top: 10%;
+  width: 98%;
+  height: 44%;
+  margin-top: 50px;
+}
+
+.What-is-intersectionality-container {
+  background-color: #ffffff;
+  left: 80%;
+  top: 10%;
+  width: 98%;
+  height: 96%;
+  margin-top: 20px;
+}
+
+#What-is-intersectionality-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  left: 26%;
+  top: 131%;
+  position: absolute;
+}
+
+#History-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  left: 26%;
+  top: 78%;
+  position: absolute;
+}
+
+#About-me-contact-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  left: 26%;
+  top: 37%;
+  position: absolute;
+}
+
+.Create-new-model-container {
+  background-image: linear-gradient(-180deg, #8A98D4, #D8D8D8);
+  opacity: 1;
+  height: 30%;
+  padding: 20px 0px 45px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  width: 15%;
+  text-align: center;
+  line-height: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #979797;
+  min-width: 220px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#Add-category-button {
+  background-color: white;
+  padding: 10px 15px;
+  margin-top: 12px;
+  width: 150px;
+}
+
+#New-model-title-input {
+  width: 180px;
+}
+
+.New-category-delete-button {
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  margin-top: 12px;
+  width: 30px;
+  height: 38px;
+}
+
+.Model-view-name-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 55px;
+  text-align: right;
+  left: 70%;
+  top: 25%;
+  position: absolute;
+}
+
+.Category-list-on-side {
+
+}
+
+#Category-list-container {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 35px;
+  text-align: right;
+  left: 85%;
+  top: 35%;
+  position: absolute;
 }

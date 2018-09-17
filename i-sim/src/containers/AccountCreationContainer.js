@@ -8,7 +8,6 @@ class AboutCreationContainer extends React.Component {
   render() {
     return (
       <div>
-        Hello, I am an account creation container.
         <Header />
         <AccountCreationBox />
       </div>
