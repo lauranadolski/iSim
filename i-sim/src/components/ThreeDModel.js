@@ -12,7 +12,6 @@ import EightSpheres from './3DModels/EightSpheres';
 class ThreeDModel extends React.Component {
 
   selectSphereComponent = () => {
-    // console.log("hey, hello", this.props.selectedModel.categories.length)
     let numberOfCategories = this.props.selectedModel.categories.length
 
     if (numberOfCategories === 1) {

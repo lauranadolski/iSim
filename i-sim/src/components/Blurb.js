@@ -6,7 +6,7 @@ class Blurb extends React.Component {
   render() {
     return (
       <div>
-        Hello, I a blurb.
+        Hello, I am a blurb.
       </div>
     )
   }

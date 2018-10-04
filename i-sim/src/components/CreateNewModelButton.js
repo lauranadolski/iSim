@@ -6,7 +6,7 @@ class CreateNewModelButton extends React.Component {
   render() {
     return (
       <div>
-        Hello, I a create new model button.
+        Hello, I am a create new model button.
       </div>
     )
   }

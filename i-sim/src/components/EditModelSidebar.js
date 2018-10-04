@@ -99,8 +99,6 @@ class EditModelSidebar extends React.Component {
       let targetIMID = ((this.props.models.loggedInUserModels[this.props.models.loggedInUserModels.length - 1].id) + 1)
       let targetCategoryName = newCategory.name
 
-      // debugger;
-
       let newCategoryBody = {
         name: targetCategoryName,
         description: "default placeholder description",

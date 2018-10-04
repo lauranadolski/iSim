@@ -7,11 +7,6 @@ import { loginUser } from '../actions/user'
 
 class LoginAndAccountCreationButtonBox extends React.Component {
 
-  componentDidMount = () => {
-    console.log("I'm in the login/account creation component. Here's my logged-in state status:", this.props.loggedIn)
-  }
-
-
   state = {
     email: "Email Address",
     password: "Password"

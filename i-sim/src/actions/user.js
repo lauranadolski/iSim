@@ -1,6 +1,5 @@
 export const loginUser = (email_address, password) => {
   return /*FUNCTION*/ (dispatch) => {
-    console.log("i yam in log-in user function dis dispatch", dispatch)
     dispatch(authenticatingUser())
     // fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/login`)
     fetch('http://localhost:3000/api/v1/login', {

@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import exampleReducer from './exampleReducer';
 import modelsReducer from './modelsReducer';
 import userReducer from './userReducer';
 

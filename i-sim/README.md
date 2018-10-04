@@ -22,7 +22,7 @@ tl;dr (my smol definition of intersectionality for the purposes of this project)
   ~~~~SCREENSHOTS~~~~
   ~~~~~~~~~~~~~~~~~~~
 
-[Video demo can be viewed at: https://youtu.be/KzzM8dyme0s]
+[Video demo can be viewed at: https://youtu.be/jWX9PgbBl50]
 
   ~~~~~~~~~~~~~~~~~~
   ~~~~~~HOW-TO~~~~~~

@@ -12,20 +12,12 @@ import LoggedInHomepageContainer from '../containers/LoggedInHomepageContainer';
 import withAuth from '../hocs/withAuth';
 import '../App.css';
 
-// import { connect } from 'react-redux'
-// import { changeExampleMessage } from './actions'
-
 const AuthedLoggedInHomepageContainer = withAuth(LoggedInHomepageContainer, "/")
 const AuthedCreateNewModelContainer = withAuth(CreateNewModelContainer, "/")
 const AuthedModelViewContainer = withAuth(ModelViewContainer, "/")
 const AuthedModelEditContainer = withAuth(ModelEditContainer, "/")
 
 class App extends Component {
-
-  // handleClick = () => {
-  //   console.log('hello')
-  //   this.props.changeExampleMessage()
-  // }
 
   render() {
     return (
@@ -43,20 +35,3 @@ class App extends Component {
 }
 
 export default App;
-
-// const mapStateToProps = (state) => {
-//   return {
-//     exampleMessage: state.exampleState.exampleMessage
-//   }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     changeExampleMessage: () => { dispatch(changeExampleMessage()) }
-//   }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-// {/* <h3> { this.props.exampleMessage }</h3>
-// <button onClick={this.handleClick}> Click me </button> */}

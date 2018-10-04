@@ -11,9 +11,7 @@ class Header extends React.Component {
   logOutButton = () => {
     if (this.props.user) {
       return (
-
         <button onClick={this.handleLogOut} className={"Header-nav-button"}>Log out</button>
-
       )
     }
   }

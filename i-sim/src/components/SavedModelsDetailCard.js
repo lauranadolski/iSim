@@ -35,10 +35,6 @@ class SavedModelsDetailCard extends React.Component {
     this.props.selectDetailModelView(this.props.model.id)
   }
 
-
-
-
-
   renderSavedModelDetails = () => {
       return (
         <div>
