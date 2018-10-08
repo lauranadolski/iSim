@@ -1,4 +1,4 @@
-// Made with love by Laura Nadolski. Last updated Monday, September 17 2018. //
+// Made with love by Laura Nadolski. Last updated Monday, October 8 2018. //
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Welcome to iSim, your friendly neighborhood intersectionality simulator.
@@ -21,6 +21,14 @@ tl;dr (my smol definition of intersectionality for the purposes of this project)
   ~~~~~~~~~~~~~~~~~~~
   ~~~~SCREENSHOTS~~~~
   ~~~~~~~~~~~~~~~~~~~
+
+  ![iSim bubble model screenshot](https://i.imgur.com/iXjSv2P.png)
+  ![iSim log-in homepage screenshot](https://i.imgur.com/Blw44ce.png)
+
+
+  ~~~~~~~~~~~~~~~~~~
+  ~~~~~~~DEMO~~~~~~~
+  ~~~~~~~~~~~~~~~~~~
 
 [Video demo can be viewed at: https://youtu.be/jWX9PgbBl50]
 
