@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Header extends React.Component {
 
+// Clears the JWS token and forces reload of the window upon log-out.
   handleLogOut = () => {
     localStorage.clear()
     window.location.reload();
   }
+
+// Check through props whether the user is logged in. If so, display a button component.
 
   logOutButton = () => {
     if (this.props.user) {
@@ -16,6 +19,7 @@ class Header extends React.Component {
     }
   }
 
+// If the props indicate that a model has been selected to show details, this function calls the selectDetailModelView function passed to it as props, which sets the value in state of the "select detail model view" to 0.
   resetDetailViewModel = () => {
     if(this.props.selectDetailModelView) {
       this.props.selectDetailModelView(0)
